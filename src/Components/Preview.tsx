@@ -1,8 +1,11 @@
 import React, { FC } from 'react'
 import marked from 'marked'
 
-const Preview: FC = () => {
-    const text = localStorage.getItem('text')
+interface Props {
+    text: string
+}
+
+const Preview: FC<Props> = ({ text }) => {
     const render = (text: string | null) => {
         if (text) {
             const __html = marked(text, { sanitize: true })

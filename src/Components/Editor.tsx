@@ -1,10 +1,13 @@
-import React, { FC, useEffect, useState, ChangeEventHandler } from 'react'
+import React, { FC, useEffect, Dispatch, ChangeEventHandler } from 'react'
 
 import { sampleText } from '../sampleText'
 
-const Editor: FC = () => {
-    const [text, setText] = useState<string>(sampleText)
+interface Props {
+    text: string
+    setText: Dispatch<React.SetStateAction<string>>
+}
 
+const Editor: FC<Props> = ({ text, setText }) => {
     const handleChange: ChangeEventHandler<HTMLTextAreaElement> = e => {
         const _text = e.target.value
         setText(_text)
