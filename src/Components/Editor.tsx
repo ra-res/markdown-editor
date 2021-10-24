@@ -1,7 +1,5 @@
 import React, { FC, useEffect, Dispatch, ChangeEventHandler } from 'react'
 
-import { sampleText } from '../sampleText'
-
 interface Props {
     text: string
     setText: Dispatch<React.SetStateAction<string>>
@@ -21,7 +19,8 @@ const Editor: FC<Props> = ({ text, setText }) => {
 
     return (
         <div className="editor">
-            <textarea onChange={handleChange} value={text} rows={35} />
+            <p className="section-title"> MARKDOWN </p>
+            <textarea onChange={handleChange} value={text} rows={60} />
         </div>
     )
 }
