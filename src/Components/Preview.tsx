@@ -15,6 +15,7 @@ const Preview: FC<Props> = ({ text }) => {
 
     return (
         <div className="preview">
+            <p className="section-title"> PREVIEW </p>
             <div dangerouslySetInnerHTML={render(text)} />
         </div>
     )
